@@ -13,7 +13,7 @@ public class Camera_controls : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -27,5 +27,11 @@ public class Camera_controls : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(x_roation, 0f, 0f);
         player_body.Rotate(Vector3.up * mouseX);
+    }
+
+    public void GameStart()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
 }
