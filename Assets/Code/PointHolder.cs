@@ -6,6 +6,7 @@ public class PointHolder : MonoBehaviour
 {
     public static PointHolder instance;
     public int stars;
+    public int points;
 
     // Ensure there's only one instance of PointHolder
     private void Awake()
@@ -22,9 +23,5 @@ public class PointHolder : MonoBehaviour
         }
     }
 
-    // Optional: You can use this method to set stars value when needed
-    public void SetStars(int value)
-    {
-        stars = value;
-    }
+  
 }

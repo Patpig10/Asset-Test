@@ -15,6 +15,10 @@ public class LevelManagerScript : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void Barn()
+    {
+        SceneManager.LoadScene(2);
+    }
     public void Home()
     {
         SceneManager.LoadScene(0);

@@ -42,17 +42,13 @@ public class Rewards : MonoBehaviour
         {
             Reward1.SetActive(true);
             Star1.SetActive(true);
-            Reward2.SetActive(false);
-            Reward3.SetActive(false);
-            Reward4.SetActive(false);
+          
         }
-        if (pointHolder.stars == 6)
+        if (pointHolder.points == 3)
         {
             Reward2.SetActive(true);
             Star2.SetActive(true);
-            Reward3.SetActive(false);
-            Reward4.SetActive(false);
-            Reward1.SetActive(true);
+           
         }
         if (pointHolder.stars == 9)
         {
