@@ -15,7 +15,7 @@ public class TeleportToWaypoint : MonoBehaviour
         }
     }
 
-    void TeleportPlayer(Transform playerTransform)
+   public void TeleportPlayer(Transform playerTransform)
     {
         if (waypoint != null)
         {

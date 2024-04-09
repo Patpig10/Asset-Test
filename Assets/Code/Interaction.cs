@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class Interaction : MonoBehaviour
 {
     public UnityEvent interact;
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         interact.Invoke();
     }
