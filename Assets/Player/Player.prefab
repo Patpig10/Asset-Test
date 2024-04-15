@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouse_sensitivity: 100
-  rotation_speed: 10
+  rotation_speed: 1
   player_body: {fileID: 7628950402260023136}
 --- !u!1 &6503178053345620298
 GameObject:
