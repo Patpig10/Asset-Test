@@ -9,6 +9,9 @@ public class Interaction : MonoBehaviour
     public UnityEvent interact;
     public void OnTriggerEnter(Collider other)
     {
-        interact.Invoke();
+        if (other.CompareTag("Player"))
+        {
+            interact.Invoke();
+        }
     }
 }

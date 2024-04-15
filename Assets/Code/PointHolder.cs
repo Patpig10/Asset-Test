@@ -7,6 +7,7 @@ public class PointHolder : MonoBehaviour
     public static PointHolder instance;
     public int stars;
     public int points;
+    public int fairy;
 
     // Ensure there's only one instance of PointHolder
     private void Awake()
