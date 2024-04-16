@@ -17,17 +17,17 @@ public class Tape_Check : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rectTransform.position.x < 420 && rectTransform.position.x > 388 &&
-            rectTransform.position.y < 280 && rectTransform.position.y > 235)
+        if(rectTransform.localPosition.x < 25 && rectTransform.localPosition.x > -20 &&
+            rectTransform.localPosition.y < 50 && rectTransform.localPosition.y > 6)
         {
                 fin.Invoke();
         }
-        else if (rectTransform.position.x < 640 && rectTransform.position.x > 580 &&
+        /*else if (rectTransform.position.x < 640 && rectTransform.position.x > 580 &&
            rectTransform.position.y < 430 && rectTransform.position.y > 350)
         {
             fin.Invoke();
-        }
-        print(rectTransform.position);
+        }*/
+        print(rectTransform.localPosition);
     }
 
     public void Dragging()
