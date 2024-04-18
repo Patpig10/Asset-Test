@@ -6,6 +6,8 @@ public class fairybgone : MonoBehaviour
 {
     private PointHolder pointHolder; // Reference to the PointHolder component
     public GameObject Fiary;
+    public GameObject Fiary2;
+
 
 
     // Start is called before the first frame update
@@ -34,9 +36,17 @@ public class fairybgone : MonoBehaviour
             return;
         }
 
-        if (pointHolder.fairy == 1)
+        if (pointHolder.fairy >= 1)
         {
             Fiary.SetActive(false);
+            Fiary2.SetActive(false);
+
+
+        }
+
+        if (pointHolder.fairy == 1)
+        {
+            Fiary2.SetActive(true);
 
         }
     }

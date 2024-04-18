@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Barn.unity
     guid: b517157882373d24eb717c04a8aa0b6a
+  - enabled: 1
+    path: Assets/Scenes/Outside/River Fencing.unity
+    guid: 546966c308aad4a43b5beafcfe63b4c2
+  - enabled: 1
+    path: Assets/Scenes/Machinery/Challenges/Wires.unity
+    guid: 5e465c1143ee62a438befa938417468c
   m_configObjects: {}

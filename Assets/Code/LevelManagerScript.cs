@@ -23,4 +23,14 @@ public class LevelManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void River()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void Mech()
+    {
+        SceneManager.LoadScene(4);
+    }
+    
 }

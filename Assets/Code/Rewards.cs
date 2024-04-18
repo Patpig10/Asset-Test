@@ -50,21 +50,17 @@ public class Rewards : MonoBehaviour
             Star2.SetActive(true);
            
         }
-        if (pointHolder.stars == 9)
+        if (pointHolder.mechs == 3)
         {
             Reward3.SetActive(true);
             Star3.SetActive(true);
-            Reward4.SetActive(false);
-            Reward1.SetActive(true);
-            Reward2.SetActive(true);
+           
         }
-        if (pointHolder.stars == 12)
+        if (pointHolder.Logpoints == 3)
         {
             Reward4.SetActive(true);
             Star4.SetActive(true);
-            Reward1.SetActive(true);
-            Reward2.SetActive(true);
-            Reward3.SetActive(true);
+           
            
         }
     }

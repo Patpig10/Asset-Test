@@ -8,16 +8,30 @@ public class Place_Fence : MonoBehaviour
     public UnityEvent Interact;
     public GameObject FencePickUp;
     public PickUpFence PickUpFence;
+    public PointHolder pointHolder;
+    public Rivertimer timer;
+    public bool finish = false;
     // Start is called before the first frame update
     void Start()
     {
         FencePickUp = GameObject.Find("LogPickUP");
         PickUpFence = FencePickUp.GetComponentInChildren<PickUpFence>();
+        pointHolder = FindObjectOfType<PointHolder>();
+
+        // Check if the PointHolder component is found
+        if (pointHolder == null)
+        {
+            Debug.LogError("PointHolder component not found!");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(pointHolder.logs == 7)
+        {
+            timer.StopTimer();
+        }
 
     }
 
@@ -31,7 +45,19 @@ public class Place_Fence : MonoBehaviour
         {
             Interact.Invoke();
             PickUpFence.logs--;
+            pointHolder.logs++;
         }
         
+    }
+
+    public void done()
+    {
+        if (pointHolder.logs == 7)
+        {
+
+            finish = true;
+
+        }
+
     }
 }

@@ -20,6 +20,8 @@ public class Interactionscript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Cursor.lockState = CursorLockMode.None;
+
         Interact.Invoke();
     }
 }

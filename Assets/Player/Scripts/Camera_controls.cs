@@ -13,7 +13,7 @@ public class Camera_controls : MonoBehaviour
 
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
+       // Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -33,5 +33,9 @@ public class Camera_controls : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
 
+    }
+    public void GameEnd()
+    {
+        Cursor.lockState = CursorLockMode.None;
     }
 }

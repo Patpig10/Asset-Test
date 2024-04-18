@@ -8,6 +8,9 @@ public class PointHolder : MonoBehaviour
     public int stars;
     public int points;
     public int fairy;
+    public int logs;
+    public int Logpoints;
+    public int mechs;
 
     // Ensure there's only one instance of PointHolder
     private void Awake()
@@ -23,6 +26,6 @@ public class PointHolder : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
   
 }

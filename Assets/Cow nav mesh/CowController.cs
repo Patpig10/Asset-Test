@@ -37,7 +37,7 @@ public class CowController : MonoBehaviour
             if (angle < 90f)
             {
                 Vector3 moveAwayDirection = transform.position - playerTransform.position;
-                agent.SetDestination(transform.position + moveAwayDirection);
+                MoveAwayFromPlayer(moveAwayDirection);
             }
         }
     }
@@ -47,9 +47,24 @@ public class CowController : MonoBehaviour
         Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
         randomDirection += transform.position;
         NavMeshHit navHit;
-        NavMesh.SamplePosition(randomDirection, out navHit, wanderRadius, -1);
-        wanderTarget = navHit.position;
-        agent.SetDestination(wanderTarget);
-        timer = 0;
+        if (NavMesh.SamplePosition(randomDirection, out navHit, wanderRadius, NavMesh.AllAreas))
+        {
+            wanderTarget = navHit.position;
+            agent.SetDestination(wanderTarget);
+            timer = 0;
+        }
+    }
+
+    void MoveAwayFromPlayer(Vector3 moveDirection)
+    {
+        // Normalize the move direction and set speed
+        Vector3 moveDirectionNormalized = moveDirection.normalized;
+        float moveSpeed = 3f; // Adjust speed as needed
+
+        // Calculate target position away from the player
+        Vector3 targetPosition = transform.position + moveDirectionNormalized * moveSpeed * Time.deltaTime;
+
+        // Move the agent to the calculated target position
+        agent.SetDestination(targetPosition);
     }
 }
