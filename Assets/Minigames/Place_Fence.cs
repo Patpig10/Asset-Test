@@ -39,7 +39,7 @@ public class Place_Fence : MonoBehaviour
     {
     }
 
-    private void OnTriggerStay(Collider other)
+    public void OnTriggerStay(Collider other)
     {
         if (Input.GetKey(KeyCode.Mouse0) && other.CompareTag("Player") && PickUpFence.logs > 0)
         {
@@ -48,6 +48,16 @@ public class Place_Fence : MonoBehaviour
             pointHolder.logs++;
         }
         
+    }
+    public void Interact1()
+    {
+        if(PickUpFence.logs > 0)
+        {
+            Interact.Invoke();
+            PickUpFence.logs--;
+            pointHolder.logs++;
+        }
+       
     }
 
     public void done()

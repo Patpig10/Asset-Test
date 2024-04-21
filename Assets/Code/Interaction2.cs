@@ -14,6 +14,7 @@ public class Interaction2 : MonoBehaviour
         {
             Debug.Log("Interact method called");
             Interact.Invoke();
+            end();
         }
     }
     public void end()

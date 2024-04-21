@@ -380,6 +380,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  No: 0
 --- !u!114 &160152633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,6 +964,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  No: 0
 --- !u!1 &413833884
 GameObject:
   m_ObjectHideFlags: 0
@@ -3060,6 +3062,7 @@ MonoBehaviour:
           m_StringArgument: 1
           m_BoolArgument: 0
         m_CallState: 2
+  No: 0
 --- !u!95 &1688470411
 Animator:
   serializedVersion: 5
@@ -3246,7 +3249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8961510251642139825, guid: 97654ab7ed7fc60439ad0d05aa01946e, type: 3}
       propertyPath: speed
-      value: 20
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8961510251642139825, guid: 97654ab7ed7fc60439ad0d05aa01946e, type: 3}
       propertyPath: m_Enabled
@@ -3331,7 +3334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactKey: 101
   interactionPopup: {fileID: 2106930386}
-  interactionDistance: 31.31
+  interactionDistance: 10
   interactionMask:
     serializedVersion: 2
     m_Bits: 128
