@@ -5,68 +5,96 @@ using UnityEngine.AI;
 
 public class CowController : MonoBehaviour
 {
-
     private NavMeshAgent agent;
-    private Vector3 wanderTarget;
-    public Transform playerTransform;
+    private Vector3 currentDestination;
+    private bool reachedDestination = true;
     public float wanderRadius = 10f;
-    public float wanderTimer = 15f;
-    private float timer;
-    private bool shouldFlee = false;
-    private float moveSpeed = 1.5f; // Adjust speed as needed
+    public float turnDistance = 1f; // Distance threshold to trigger direction change
+    public float avoidanceDistance = 2f; // Distance to avoid obstacles
+    public float gizmoSphereSize = 0.5f; // Size of debug sphere in Gizmos
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.speed = moveSpeed; // Set the agent's speed
-        timer = wanderTimer;
+        agent.updateRotation = false; // Disable automatic rotation by NavMeshAgent
+        agent.stoppingDistance = 1f; // Set stopping distance to prevent jittering near target
+
         SetNewRandomDestination();
     }
 
     void Update()
     {
-        timer += Time.deltaTime;
-
-        // Check if it's time to find a new destination
-        if (timer >= wanderTimer)
+        if (reachedDestination && !agent.pathPending && agent.remainingDistance < agent.stoppingDistance)
         {
-            SetNewRandomDestination();
+            // Cow has reached the current destination, trigger direction change
+            reachedDestination = false;
+            StartCoroutine(ChangeDirection());
         }
 
-        // If the player is present and within sight, start fleeing from them
-        if (playerTransform != null && !shouldFlee)
-        {
-            Vector3 directionToPlayer = playerTransform.position - transform.position;
-            float angle = Vector3.Angle(transform.forward, directionToPlayer);
+        // Update the agent's destination
+        agent.SetDestination(currentDestination);
 
-            // If player is in front of the cow (within a 90-degree cone), start fleeing
-            if (angle < 90f)
-            {
-                shouldFlee = true;
-               // MoveAwayFromPlayer(directionToPlayer);
-            }
-        }
+        // Face the direction of movement
+        RotateTowardsMovementDirection();
+
+        // Avoid bumping into obstacles
+        AvoidBumpingObstacles();
+    }
+
+    IEnumerator ChangeDirection()
+    {
+        // Wait for a short delay before changing direction
+        yield return new WaitForSeconds(Random.Range(1f, 3f));
+
+        // Set a new random destination point
+        SetNewRandomDestination();
+
+        // Mark that the cow has reached the current destination
+        reachedDestination = true;
     }
 
     void SetNewRandomDestination()
     {
-        // Generate a random point within the wander radius
-        Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
-        randomDirection += transform.position;
-        NavMeshHit navHit;
-        if (NavMesh.SamplePosition(randomDirection, out navHit, wanderRadius, NavMesh.AllAreas))
+        // Calculate a random point within the wander radius
+        Vector3 randomDirection = Random.insideUnitSphere.normalized * wanderRadius;
+        currentDestination = transform.position + randomDirection;
+    }
+
+    void RotateTowardsMovementDirection()
+    {
+        // Get the velocity of the NavMeshAgent
+        Vector3 velocity = agent.velocity;
+
+        if (velocity.magnitude > 0.1f)
         {
-            wanderTarget = navHit.position;
-            agent.SetDestination(wanderTarget);
-            timer = 0;
-            shouldFlee = false; // Reset fleeing state when setting new destination
+            // Calculate the rotation to look towards the movement direction
+            Quaternion targetRotation = Quaternion.LookRotation(velocity.normalized);
+
+            // Smoothly rotate towards the target rotation
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * agent.angularSpeed);
         }
     }
 
-  /*  void MoveAwayFromPlayer(Vector3 directionToPlayer)
+    void AvoidBumpingObstacles()
     {
-        // Calculate the desired movement direction away from the player
-        Vector3 moveDirection = -directionToPlayer.normalized;
-        agent.velocity = moveDirection * moveSpeed; // Set the agent's velocity to move direction multiplied by speed
-    }*/
+        // Check for nearby obstacles tagged as "cow"
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, avoidanceDistance);
+
+        foreach (Collider collider in hitColliders)
+        {
+            if (collider.gameObject.CompareTag("cow") && collider.gameObject != gameObject)
+            {
+                Vector3 avoidanceDirection = transform.position - collider.transform.position;
+                currentDestination = transform.position + avoidanceDirection.normalized * agent.stoppingDistance;
+                break; // Stop checking once an obstacle is found and avoided
+            }
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        // Draw the current destination point
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(currentDestination, gizmoSphereSize);
+    }
 }
