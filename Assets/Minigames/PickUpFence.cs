@@ -22,6 +22,10 @@ public class PickUpFence : MonoBehaviour
         {
             logs = 4;
         }
+        if (logs < 0)
+        {
+            logs = 0;
+        }
         text.text = logs.ToString();
     }
 
