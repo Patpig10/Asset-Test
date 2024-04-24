@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 
 public class BarnTimer : MonoBehaviour
@@ -18,6 +19,8 @@ public class BarnTimer : MonoBehaviour
     public GameObject Star1;
     public GameObject Star2;
     public GameObject Star3;
+
+    public UnityEvent showArrows;
 
 
     void Start()
@@ -48,9 +51,6 @@ public class BarnTimer : MonoBehaviour
             string seconds = (t % 60).ToString("00");
 
             timerText.text = minutes + ":" + seconds;
-
-
-
         }
         if (hayCounter.finish == true) // Only award points if hayCounter.finish is true
         {
@@ -77,6 +77,11 @@ public class BarnTimer : MonoBehaviour
                 Debug.Log("Points awarded: " + pointHolder.stars);
                 Star1.SetActive(true);
             }
+        }
+
+        if (x >= 60)
+        {
+            showArrows.Invoke();
         }
     }
 
