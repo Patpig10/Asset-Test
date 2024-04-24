@@ -408,6 +408,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1646689815243313023, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.023077
@@ -1368,14 +1376,14 @@ RectTransform:
   m_GameObject: {fileID: 100787311}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.6114078, y: 3.7327566, z: 3.1633532}
+  m_LocalScale: {x: 1.1192946, y: 0.771523, z: 0.9649248}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1399942434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 135.8, y: 42.7}
+  m_AnchoredPosition: {x: 135.8, y: 46.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &100787313
@@ -1398,7 +1406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9782a7e9464aabc4091fd51e266e733d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c9e366884d5b76f4fac293cbd4ca0db9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3213,6 +3221,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1646689815243313023, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.969555
@@ -4855,14 +4871,14 @@ RectTransform:
   m_GameObject: {fileID: 641664877}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.4253373, y: 3.555136, z: 3.2615926}
+  m_LocalScale: {x: 1.0827608, y: 0.7668364, z: 0.54962474}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1399942434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -42.8, y: 42.8}
+  m_AnchoredPosition: {x: -49.3, y: 46.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &641664879
@@ -4885,7 +4901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9782a7e9464aabc4091fd51e266e733d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c9e366884d5b76f4fac293cbd4ca0db9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5224,6 +5240,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1646689815243313023, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 63.625813
@@ -5687,7 +5711,7 @@ RectTransform:
   m_GameObject: {fileID: 721045723}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.84845, y: 4.384609, z: 4.384609}
+  m_LocalScale: {x: 1.3716162, y: 0.9121631, z: 0.7662661}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1399942434}
@@ -5717,7 +5741,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9782a7e9464aabc4091fd51e266e733d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c9e366884d5b76f4fac293cbd4ca0db9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7803,6 +7827,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 1646689815243313023, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.093315
@@ -8640,6 +8672,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1646689815243313023, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.680202
@@ -8697,6 +8737,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1646689815243313023, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 52.16658
@@ -9048,6 +9096,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1646689815243313023, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.2808876
@@ -10287,6 +10343,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27.707943
@@ -11180,6 +11240,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 1646689815243313023, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.841583
@@ -11237,6 +11305,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1646689815243313023, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.461578
@@ -11973,6 +12049,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 1646689815243313023, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.542686
@@ -13704,6 +13788,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1646689815243313023, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 29.035572
@@ -14994,6 +15086,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 1646689815243313023, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 48.92743
@@ -16088,6 +16188,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cows (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1646689815243313023, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 828610504}
     - target: {fileID: 8288704844449756047, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 31.159138
@@ -16149,6 +16257,10 @@ PrefabInstance:
       propertyPath: waypoint
       value: 
       objectReference: {fileID: 1519991406}
+    - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
+      propertyPath: wanderTimer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4590815141135973951, guid: 2a60c885d4b53a34e8b3ed9384ca9f0a, type: 3}
       propertyPath: playerTransform
       value: 

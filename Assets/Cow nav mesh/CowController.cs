@@ -5,16 +5,20 @@ using UnityEngine.AI;
 
 public class CowController : MonoBehaviour
 {
+
     private NavMeshAgent agent;
     private Vector3 wanderTarget;
     public Transform playerTransform;
     public float wanderRadius = 10f;
-    public float wanderTimer = 5f;
+    public float wanderTimer = 15f;
     private float timer;
+    private bool shouldFlee = false;
+    private float moveSpeed = 1.5f; // Adjust speed as needed
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = moveSpeed; // Set the agent's speed
         timer = wanderTimer;
         SetNewRandomDestination();
     }
@@ -23,27 +27,30 @@ public class CowController : MonoBehaviour
     {
         timer += Time.deltaTime;
 
+        // Check if it's time to find a new destination
         if (timer >= wanderTimer)
         {
             SetNewRandomDestination();
         }
 
-        if (playerTransform != null)
+        // If the player is present and within sight, start fleeing from them
+        if (playerTransform != null && !shouldFlee)
         {
             Vector3 directionToPlayer = playerTransform.position - transform.position;
             float angle = Vector3.Angle(transform.forward, directionToPlayer);
 
-            // If player is in front of the cow, move away
+            // If player is in front of the cow (within a 90-degree cone), start fleeing
             if (angle < 90f)
             {
-                Vector3 moveAwayDirection = transform.position - playerTransform.position;
-                MoveAwayFromPlayer(moveAwayDirection);
+                shouldFlee = true;
+               // MoveAwayFromPlayer(directionToPlayer);
             }
         }
     }
 
     void SetNewRandomDestination()
     {
+        // Generate a random point within the wander radius
         Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
         randomDirection += transform.position;
         NavMeshHit navHit;
@@ -52,19 +59,14 @@ public class CowController : MonoBehaviour
             wanderTarget = navHit.position;
             agent.SetDestination(wanderTarget);
             timer = 0;
+            shouldFlee = false; // Reset fleeing state when setting new destination
         }
     }
 
-    void MoveAwayFromPlayer(Vector3 moveDirection)
+  /*  void MoveAwayFromPlayer(Vector3 directionToPlayer)
     {
-        // Normalize the move direction and set speed
-        Vector3 moveDirectionNormalized = moveDirection.normalized;
-        float moveSpeed = 3f; // Adjust speed as needed
-
-        // Calculate target position away from the player
-        Vector3 targetPosition = transform.position + moveDirectionNormalized * moveSpeed * Time.deltaTime;
-
-        // Move the agent to the calculated target position
-        agent.SetDestination(targetPosition);
-    }
+        // Calculate the desired movement direction away from the player
+        Vector3 moveDirection = -directionToPlayer.normalized;
+        agent.velocity = moveDirection * moveSpeed; // Set the agent's velocity to move direction multiplied by speed
+    }*/
 }
