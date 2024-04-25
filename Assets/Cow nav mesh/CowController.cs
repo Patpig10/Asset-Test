@@ -8,10 +8,12 @@ public class CowController : MonoBehaviour
     private NavMeshAgent agent;
     private Vector3 currentDestination;
     private bool reachedDestination = true;
+    private float destinationTimer = 0f;
     public float wanderRadius = 10f;
     public float turnDistance = 1f; // Distance threshold to trigger direction change
     public float avoidanceDistance = 2f; // Distance to avoid obstacles
     public float gizmoSphereSize = 0.5f; // Size of debug sphere in Gizmos
+    public float maxDestinationWaitTime = 10f; // Maximum time to wait before changing destination
 
     void Start()
     {
@@ -29,6 +31,20 @@ public class CowController : MonoBehaviour
             // Cow has reached the current destination, trigger direction change
             reachedDestination = false;
             StartCoroutine(ChangeDirection());
+        }
+        else
+        {
+            // Increment timer while waiting to reach destination
+            destinationTimer += Time.deltaTime;
+
+            // Check if the timer exceeds the maximum wait time
+            if (destinationTimer >= maxDestinationWaitTime)
+            {
+                // Timer exceeded, change direction and set new destination
+                SetNewRandomDestination();
+                reachedDestination = true; // Consider destination reached to reset the timer
+                destinationTimer = 0f; // Reset timer
+            }
         }
 
         // Update the agent's destination
@@ -49,8 +65,8 @@ public class CowController : MonoBehaviour
         // Set a new random destination point
         SetNewRandomDestination();
 
-        // Mark that the cow has reached the current destination
-        reachedDestination = true;
+        // Reset destination timer
+        destinationTimer = 0f;
     }
 
     void SetNewRandomDestination()
@@ -77,17 +93,41 @@ public class CowController : MonoBehaviour
 
     void AvoidBumpingObstacles()
     {
-        // Check for nearby obstacles tagged as "cow"
+        // Check for nearby obstacles and other cows
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, avoidanceDistance);
 
         foreach (Collider collider in hitColliders)
         {
-            if (collider.gameObject.CompareTag("cow") && collider.gameObject != gameObject)
+            if (collider.gameObject != gameObject) // Ignore self
             {
-                Vector3 avoidanceDirection = transform.position - collider.transform.position;
-                currentDestination = transform.position + avoidanceDirection.normalized * agent.stoppingDistance;
-                break; // Stop checking once an obstacle is found and avoided
+                // Check if the cow is heading towards another cow or an obstacle
+                if (collider.gameObject.CompareTag("cow") || collider.gameObject.CompareTag("obstacle"))
+                {
+                    // Calculate the avoidance direction away from the obstacle
+                    Vector3 avoidanceDirection = transform.position - collider.transform.position;
+
+                    // Update the destination point to avoid the obstacle
+                    currentDestination = transform.position + avoidanceDirection.normalized * avoidanceDistance;
+
+                    // Check if the cow is stuck (not moving towards the new point)
+                    if (Vector3.Distance(transform.position, agent.destination) < turnDistance)
+                    {
+                        // Cow is likely stuck, generate a new random destination
+                        SetNewRandomDestination();
+                    }
+
+                    // Exit the loop after handling one obstacle
+                    break;
+                }
             }
+        }
+
+        // Check for collision with obstacles
+        if (agent.velocity.magnitude > 0f && agent.isStopped)
+        {
+            // Cow is colliding with an obstacle and stopped moving
+            SetNewRandomDestination(); // Change direction
+            reachedDestination = true; // Reset reachedDestination flag
         }
     }
 

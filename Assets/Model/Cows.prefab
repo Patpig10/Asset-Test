@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 5540188950848903754}
   m_Layer: 0
   m_Name: Cows
-  m_TagString: Untagged
+  m_TagString: cow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,9 +251,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0b2c7480b48924dbb873fbfdaa98e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
   wanderRadius: 51.1
-  wanderTimer: 17
+  turnDistance: 1
+  avoidanceDistance: 2
+  gizmoSphereSize: 0.5
+  maxDestinationWaitTime: 10
 --- !u!54 &5540188950848903754
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -427,8 +429,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.41971818}
-  m_Center: {x: 0, y: 0, z: 0.29014146}
+  m_Size: {x: 1.4165219, y: 1, z: 1.0004239}
+  m_Center: {x: -0.2082607, y: 0, z: -0.00021120896}
 --- !u!114 &1646689815243313023
 MonoBehaviour:
   m_ObjectHideFlags: 0

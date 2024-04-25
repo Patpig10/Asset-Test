@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class FillScreenUI : MonoBehaviour
 {
     public Image backgroundImage; // Reference to your UI image component
+    public Image backgroundImage2; // Reference to your UI image component
+
 
     void Start()
     {
@@ -25,9 +27,12 @@ public class FillScreenUI : MonoBehaviour
 
         // Get the RectTransform component of the image
         RectTransform bgRectTransform = backgroundImage.rectTransform;
+        RectTransform bgRectTransform2 = backgroundImage2.rectTransform;
 
         // Set the size of the image to fill the canvas
         bgRectTransform.sizeDelta = new Vector2(screenWidth, screenHeight);
         bgRectTransform.anchoredPosition = Vector2.zero; // Position at the center of the canvas
+        bgRectTransform2.sizeDelta = new Vector2(screenWidth, screenHeight);
+        bgRectTransform2.anchoredPosition = Vector2.zero; // Position at the center of the canvas
     }
 }

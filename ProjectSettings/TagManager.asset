@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - cow
+  - obstacle
   layers:
   - Default
   - TransparentFX
