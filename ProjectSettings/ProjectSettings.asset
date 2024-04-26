@@ -767,11 +767,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: assetstest
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 001fe3e3dab6db01
   metroApplicationDescription: assets test
   wsaImages: {}
   metroTileShortName: assets test
