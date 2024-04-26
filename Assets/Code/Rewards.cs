@@ -12,7 +12,8 @@ public class Rewards : MonoBehaviour
     public GameObject Star2;
     public GameObject Star3;
     public GameObject Star4;
-    private PointHolder pointHolder; // Reference to the PointHolder component
+    private PointHolder pointHolder;
+    public GameObject Credits;
 
     void Start()
     {
@@ -62,6 +63,10 @@ public class Rewards : MonoBehaviour
             Star4.SetActive(true);
            
            
+        }
+        if (pointHolder.stars == 3 && pointHolder.points == 3 && pointHolder.mechs == 3 && pointHolder.Logpoints == 3)
+        {
+            Credits.SetActive(true);
         }
     }
 }

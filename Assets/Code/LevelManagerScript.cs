@@ -32,5 +32,10 @@ public class LevelManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene(4);
     }
-    
+
+    public void Credit()
+    {
+        SceneManager.LoadScene(5);
+    }
+
 }

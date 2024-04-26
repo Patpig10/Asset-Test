@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Machinery/Challenges/Wires.unity
     guid: 5e465c1143ee62a438befa938417468c
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 59baff6ea879b514f8a61bd9a4f0b3ad
   m_configObjects: {}
